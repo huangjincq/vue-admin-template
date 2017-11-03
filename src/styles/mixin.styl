@@ -1,0 +1,101 @@
+// 清浮动 混合
+clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// 三角形制作 混合
+triangle($width, $height, $color, $direction) {
+  $width = $width/ 2
+  $color-border-style = $height solid $color
+  $transparent-border-style = $width solid transparent
+  height 0
+  width 0
+  display inline-block
+  if $direction == up {
+    border-bottom $color-border-style
+    border-left $transparent-border-style
+    border-right $transparent-border-style
+  }
+  else if $direction == right {
+    border-left $color-border-style
+    border-top $transparent-border-style
+    border-bottom $transparent-border-style
+  }
+  else if $direction == down {
+    border-top $color-border-style
+    border-left $transparent-border-style
+    border-right $transparent-border-style
+  }
+  else if $direction == left {
+    border-right $color-border-style
+    border-top $transparent-border-style
+    border-bottom $transparent-border-style
+  }
+}
+
+border-1px-top($color)
+  position relative
+  &:after
+    position absolute
+    width 100%
+    height 1px
+    left 0
+    top 0
+    border-top 1px solid $color
+    color $color
+    content ' '
+    transform-origin 0 0
+    transform scaleY(.5)
+
+border-1px-bottom($color)
+  position relative
+  &:after
+    position absolute
+    width 100%
+    height 1px
+    left 0
+    bottom 0
+    border-bottom 1px solid $color
+    color $color
+    content ' '
+    transform-origin 0 0
+    transform scaleY(.5)
+
+border-1px-left($color)
+  position relative
+  &:after
+    position absolute
+    width 1px
+    height 100%
+    left 0
+    top 0
+    border-left 1px solid $color
+    color $color
+    content ' '
+    transform-origin 0 0
+    transform scaleX(.5)
+
+border-1px-right($color)
+  position relative
+  &:after
+    position absolute
+    width 1px
+    height 100%
+    right 0
+    top 0
+    border-right 1px solid $color
+    color $color
+    content ' '
+    transform-origin 0 0
+    transform scaleX(.5)
+
+border-none()
+  &:after
+    display none
+
+bg-image($url)
+  background-image url($url + ".png")
