@@ -1,7 +1,10 @@
 /**
- * Created by huangjin on 2017/8/03.
+ * Created by huangjin on 2017/11/03.
  */
+import { getLocalStorage } from '@/utils/storage'
+import { constantRouterMap } from '@/router'
 export default {
-  authorization: localStorage.getItem('Authorization'),
-  userMsg: null     // 用户信息
+  userMsg: null,     // 用户信息
+  routers: constantRouterMap,
+  sidebarStatus: getLocalStorage('sidebarStatus') !== null ? getLocalStorage('sidebarStatus') : true
 }

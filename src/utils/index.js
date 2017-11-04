@@ -1,7 +1,6 @@
 /**
- * Created by jiachenpan on 16/11/18.
+ * Created by huangjin on 17/11/4.
  */
-import store from '../store'
 
 // 日期格式化的方法
 export function formatDate (date, fmt) {
@@ -39,19 +38,22 @@ export function parserDate (date) {
   }
 }
 
-// 格式化下拉框的数据
-export function formatOptions (options) {
-  const arr = []
-  for (const k in options) {
-    arr.push({ key: k, value: options[k] })
+export function deepClone (source) {
+  if (!source && typeof source !== 'object') {
+    throw new Error('error arguments', 'shallowClone')
   }
-  return arr
-}
-
-// 权限控制的方法
-export function accessControl (Code) {
-  const menuList = store.getters.menuList
-  return menuList.findIndex((x) => x.url === Code) !== -1
+  const targetObj = source.constructor === Array ? [] : {}
+  for (const keys in source) {
+    if (source.hasOwnProperty(keys)) {
+      if (source[keys] && typeof source[keys] === 'object') {
+        targetObj[keys] = source[keys].constructor === Array ? [] : {}
+        targetObj[keys] = deepClone(source[keys])
+      } else {
+        targetObj[keys] = source[keys]
+      }
+    }
+  }
+  return targetObj
 }
 
 export function deepClone (source) {

@@ -2,6 +2,8 @@
  * Created by huangjin on 2017/8/03.
  */
 import { login, getUserInfo } from '@/api/login'
+import { setLocalStorage } from '@/utils/storage'
+
 import * as types from './mutation_types'
 
 export default {
@@ -10,7 +12,7 @@ export default {
     return new Promise((resolve, reject) => {
       login(userInfo).then(response => {
         if (response.code === 'H0000') {
-          localStorage.setItem('Authorization', response.data.token)   // 用户token 存到本地
+          setLocalStorage('Authorization', response.data.token)   // 用户token 存到本地
           commit(types.SET_AUTHORIZATION, response.data.token)
         }
         resolve(response)
@@ -40,5 +42,9 @@ export default {
       localStorage.removeItem('Authorization')
       resolve()
     })
+  },
+  // 设置侧边栏是否展开
+  ToggleSideBar ({ commit }) {
+    commit(types.SET_SIDEBARSTATUS)
   }
 }

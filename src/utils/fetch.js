@@ -1,5 +1,7 @@
 import axios from 'axios'
 import store from '../store'
+import { getLocalStorage } from '@/utils/storage'
+
 import { Message } from 'element-ui'
 
 const ENV = process.env.NODE_ENV
@@ -13,7 +15,7 @@ const service = axios.create({
 
 // request 请求发送之前 拦截器
 service.interceptors.request.use(config => {
-  const Authorization = localStorage.getItem('Authorization')
+  const Authorization = getLocalStorage('Authorization')
   if (Authorization) {
     config.headers.Authorization = Authorization  // 让每个请求携带token--['Authorization']为自定义key 请根据实际情况自行修改
   }

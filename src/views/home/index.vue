@@ -1,19 +1,50 @@
 <template>
-  <div class="home-page">
-   主页
-    <el-button @click="loginOut">退出</el-button>
-  </div>
+  <el-container class="container">
+    <el-aside width="200px">
+      <sidebar></sidebar>
+    </el-aside>
+    <el-container >
+      <el-header>
+        <navbar></navbar>
+      </el-header>
+      <el-main>
+        <home-main></home-main>
+      </el-main>
+    </el-container>
+  </el-container>
+  <!--<div>
+    <div style="position:absolute;left: 0;width: 200px;top: 0;height: 100%;z-index: 99">
+      <sidebar></sidebar>
+    </div>
+    <div  style="position:absolute;padding-left: 200px;width: 100%;height: 100%;">
+      <el-header>
+        <navbar></navbar>
+      </el-header>
+      <el-main>
+        <home-main></home-main>
+      </el-main>
+    </div>
+  </div>-->
 </template>
 
-<script type="text/ecmascript-6">
+<script>
+  import sidebar from './sidebar'
+  import homeMain from './homeMain'
+  import navbar from './navbar'
+  import { mapGetters } from 'vuex'
+
   export default {
+    name: 'home',
+    components: { sidebar, homeMain, navbar },
     data () {
-      return {
-      }
+      return {}
     },
     created () {
     },
-    watch: {
+    computed: {
+      ...mapGetters([
+        'sidebar'
+      ])
     },
     methods: {
       loginOut () {
@@ -26,5 +57,10 @@
 </script>
 
 <style lang="stylus" scoped>
-
+  .container
+    position fixed
+    left 0
+    right 0
+    bottom 0
+    top 0
 </style>

@@ -4,7 +4,7 @@ import NProgress from 'nprogress'  // Progress 进度条
 import 'nprogress/nprogress.css'   // Progress 进度条样式
 import { Message } from 'element-ui'
 
-const whiteList = ['/login']   // 不需要权限验证拦截的 路由列表
+const whiteList = ['/login']   // 不需要权限验证拦截的白名单路由
 router.beforeEach((to, from, next) => {
   NProgress.start()            // 开启Progress
   if (localStorage.getItem('Authorization')) {
