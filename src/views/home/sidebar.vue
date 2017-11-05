@@ -1,5 +1,9 @@
 <template>
-  <el-menu :default-active="$route.path" class="sidebar" router :collapse="sidebar">
+  <el-menu
+    :default-active="$route.path"
+    class="sidebar" :class="{close:sidebar}"
+    router :collapse="sidebar"
+  >
     <template v-for="item in permissionRouters">
       <el-menu-item v-if="!item.hidden && item.noDropdown && item.children.length>0"
                     :index="item.path+'/'+item.children[0].path">
@@ -42,7 +46,15 @@
 
 <style lang="stylus" scoped>
   .sidebar
+    position fixed
+    left 0
+    top 0
     height 100%
+    z-index 1
+    width 200px
+    transition width .25s ease-out
+    &.close
+      width 64px
     .iconfont
       margin-right 8px
 </style>

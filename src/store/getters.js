@@ -3,6 +3,7 @@
  */
 export default {
   permissionRouters: state => state.routers,                         // 路由数组
-  sidebar: state => state.sidebarStatus                              // 侧边栏展开状态
+  sidebar: state => state.sidebarStatus,                              // 侧边栏展开状态
+  avatar: state => state.userMsg.avatar ? state.userMsg.avatar : 'static/img/avatar.jpg'                             // 侧边栏展开状态
 }
 

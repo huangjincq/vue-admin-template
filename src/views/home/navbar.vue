@@ -1,9 +1,31 @@
 <template>
   <div class="navbar">
-    <i class="iconfont icon-zhankai" :class="{left:!sidebar}" @click="toggleSideBar"></i>
-    <levelbar></levelbar>
-    {{sidebar}}
-    <el-button @click="logout">退出</el-button>
+    <div class="navbar-left">
+      <i class="iconfont icon-zhankai" :class="{left:!sidebar}" @click="toggleSideBar"></i>
+      <levelbar></levelbar>
+    </div>
+    <div class="navbar-right">
+      <div class="navbar-right-item">ssss</div>
+      <el-dropdown class="avatar-container" >
+        <div class="avatar-wrapper navbar-right-item">
+          <img class="user-avatar" :src="avatar">
+          <i class="on bottom b-white"></i>
+        </div>
+        <el-dropdown-menu class="user-dropdown" slot="dropdown">
+          <router-link class='inlineBlock' to="/">
+            <el-dropdown-item>
+              首页
+            </el-dropdown-item>
+          </router-link>
+          <a target='_blank' href="">
+            <el-dropdown-item>
+              项目地址
+            </el-dropdown-item>
+          </a>
+          <el-dropdown-item divided @click="logout"><span  style="display:block;">退出登录</span></el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
   </div>
 </template>
 
@@ -40,55 +62,60 @@
 
 <style lang="stylus" scoped>
   .navbar
-    height 60px
-    line-height 60px
-    .icon-zhankai
-      display inline-block
-      position relative
-      top -20px
-      cursor pointer
-      &.left
-        transform rotate(180deg)
+    height 50px
+    line-height 50px
+    display flex
+    justify-content space-between
+    .navbar-left
+      flex 1
+      display flex
+      .icon-zhankai
+        display block
+        font-size 13px
+        position relative
+        top -2px
+        cursor pointer
+        margin-right 10px
+        transform-origin center center
+        &.left
+          transform rotate(180deg)
 
-    .hamburger-container {
-      line-height: 58px;
-      height: 50px;
-      float: left;
-      padding: 0 10px;
-    }
-    .errLog-container {
-      display: inline-block;
-      position: absolute;
-      right: 150px;
-    }
-    .screenfull {
-      position: absolute;
-      right: 90px;
-      top: 16px;
-      color: red;
-    }
-    .avatar-container {
-      height: 50px;
-      display: inline-block;
-      position: absolute;
-      right: 35px;
-      .avatar-wrapper {
-        cursor: pointer;
-        margin-top: 5px;
-        position: relative;
-        .user-avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-        }
-        .el-icon-caret-bottom {
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
-        }
-      }
-    }
+    .navbar-right
+      display flex
+      .navbar-right-item
+        transition border .25s
+        border-bottom 2px solid transparent
+        height 50px
+        cursor: pointer
+        position relative
+        padding 0 10px
+        &:hover
+          border-bottom 2px solid #000
+      .screenfull
+        position: absolute;
+        right: 90px;
+        top: 16px;
+        color: red;
+      .avatar-container
+        .avatar-wrapper
+          .user-avatar
+            width: 40px
+            height 40px
+            margin-top 5px
+            border-radius: 50%;
+          .on
+            position absolute
+            left auto
+            top auto
+            bottom 5px
+            right 10px
+            width 10px
+            height 10px
+            background-color #6cc788
+            border 2px solid #fff
+            border-radius: 50%
+
+
 </style>
 
 
