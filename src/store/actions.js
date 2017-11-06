@@ -46,5 +46,16 @@ export default {
   // 设置侧边栏是否展开
   ToggleSideBar ({ commit }) {
     commit(types.SET_SIDEBARSTATUS)
+  },
+  // 增加一个访问记录
+  AddVisitedViews ({ commit }, view) {
+    commit(types.ADD_VISITED_VIEWS, view)
+  },
+  // 删除一个访问记录
+  DelVisitedViews ({ commit, state }, view) {
+    return new Promise((resolve) => {
+      commit(types.DEL_VISITED_VIEWS, view)
+      resolve([...state.visitedViews])
+    })
   }
 }

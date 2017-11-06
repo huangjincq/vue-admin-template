@@ -1,12 +1,13 @@
 <template>
-  <div class="container">
+  <div id="main" class="container">
     <sidebar></sidebar>
     <el-container class="container-right" :class="{close:sidebar}">
       <el-header height="50px">
         <navbar></navbar>
       </el-header>
       <el-main>
-        <home-main></home-main>
+        <home-main>
+        </home-main>
       </el-main>
     </el-container>
   </div>

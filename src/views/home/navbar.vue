@@ -1,28 +1,35 @@
 <template>
-  <div class="navbar">
-    <div class="navbar-left">
-      <i class="iconfont icon-zhankai" :class="{left:!sidebar}" @click="toggleSideBar"></i>
+  <div class='navbar'>
+    <div class='navbar-left'>
+      <i class='iconfont icon-zhankai' :class='{left:!sidebar}' @click='toggleSideBar'></i>
       <levelbar></levelbar>
+      <tabs-view></tabs-view>
     </div>
-    <div class="navbar-right">
-      <div class="navbar-right-item">ssss</div>
-      <el-dropdown class="avatar-container" >
-        <div class="avatar-wrapper navbar-right-item">
-          <img class="user-avatar" :src="avatar">
-          <i class="on bottom b-white"></i>
+    <div class='navbar-right'>
+
+      <div class='navbar-right-item'>
+        <screenfull></screenfull>
+      </div>
+      <div class='navbar-right-item'>
+        <switch-theme></switch-theme>
+      </div>
+      <el-dropdown class='avatar-container'>
+        <div class='avatar-wrapper navbar-right-item'>
+          <img class='user-avatar' :src='avatar'>
+          <i class='on bottom b-white'></i>
         </div>
-        <el-dropdown-menu class="user-dropdown" slot="dropdown">
-          <router-link class='inlineBlock' to="/">
+        <el-dropdown-menu class='user-dropdown' slot='dropdown'>
+          <router-link class='inlineBlock' to='/'>
             <el-dropdown-item>
               首页
             </el-dropdown-item>
           </router-link>
-          <a target='_blank' href="">
+          <a target='_blank' href=''>
             <el-dropdown-item>
               项目地址
             </el-dropdown-item>
           </a>
-          <el-dropdown-item divided @click="logout"><span  style="display:block;">退出登录</span></el-dropdown-item>
+          <el-dropdown-item divided @click='logout'><span style='display:block;'>退出登录</span></el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -31,11 +38,13 @@
 
 <script>
   import { mapGetters } from 'vuex'
-
-  import levelbar from './Levelbar.vue'
+  import Screenfull from '@/components/Screenfull'
+  import SwitchTheme from '@/components/SwitchTheme'
+  import tabsView from './tabsView'
+  import levelbar from './levelbar.vue'
 
   export default {
-    components: { levelbar },
+    components: { levelbar, Screenfull, tabsView, SwitchTheme },
     data () {
       return {}
     },
@@ -60,7 +69,7 @@
   }
 </script>
 
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
   .navbar
     height 50px
     line-height 50px
@@ -82,6 +91,7 @@
 
     .navbar-right
       display flex
+      margin-right 15px
       .navbar-right-item
         transition border .25s
         border-bottom 2px solid transparent
@@ -91,11 +101,6 @@
         padding 0 10px
         &:hover
           border-bottom 2px solid #000
-      .screenfull
-        position: absolute;
-        right: 90px;
-        top: 16px;
-        color: red;
       .avatar-container
         .avatar-wrapper
           .user-avatar
