@@ -1,7 +1,9 @@
 <template>
-  <el-tooltip effect="dark" :content="isFullScreen ? '退出全屏' : '全屏'" placement="bottom">
-    <i @click='click' :class="isFullScreen?'el-icon-upload':'el-icon-rank'"></i>
-  </el-tooltip>
+  <div @click='click'>
+    <el-tooltip effect="dark" :content="isFullScreen ? '退出全屏' : '全屏'" placement="bottom">
+      <i :class="isFullScreen?'el-icon-upload':'el-icon-rank'"></i>
+    </el-tooltip>
+  </div>
 </template>
 
 <script>

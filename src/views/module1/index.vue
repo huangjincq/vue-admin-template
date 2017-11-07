@@ -10,6 +10,10 @@
     <el-button type="primary">
       更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
     </el-button>
+
+    <el-tooltip class="item" effect="dark" content="Top Left 提示文字" placement="top-start">
+      <el-button>上左</el-button>
+    </el-tooltip>
   </div>
 </template>
 

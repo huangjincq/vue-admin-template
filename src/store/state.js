@@ -6,6 +6,6 @@ import { constantRouterMap } from '@/router'
 export default {
   userMsg: null,       // 用户信息
   routers: constantRouterMap,
-  sidebarStatus: getLocalStorage('sidebarStatus') !== null ? getLocalStorage('sidebarStatus') : true,
+  sidebarStatus: getLocalStorage('sidebarStatus') !== null ? getLocalStorage('sidebarStatus') : false,
   visitedViews: []     // 访问过的页面
 }

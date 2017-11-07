@@ -8,12 +8,12 @@
     <div class='navbar-right'>
 
       <div class='navbar-right-item'>
-        <screenfull></screenfull>
+        <screenfull class="screenfull"></screenfull>
       </div>
       <div class='navbar-right-item'>
         <switch-theme></switch-theme>
       </div>
-      <el-dropdown class='avatar-container'>
+      <el-dropdown class='avatar-container' trigger="click">
         <div class='avatar-wrapper navbar-right-item'>
           <img class='user-avatar' :src='avatar'>
           <i class='on bottom b-white'></i>
@@ -29,7 +29,7 @@
               项目地址
             </el-dropdown-item>
           </a>
-          <el-dropdown-item divided @click='logout'><span style='display:block;'>退出登录</span></el-dropdown-item>
+          <el-dropdown-item divided ><span @click='logout' style='display:block;'>退出登录</span></el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -41,7 +41,7 @@
   import Screenfull from '@/components/Screenfull'
   import SwitchTheme from '@/components/SwitchTheme'
   import tabsView from './tabsView'
-  import levelbar from './levelbar.vue'
+  import levelbar from './levelbar'
 
   export default {
     components: { levelbar, Screenfull, tabsView, SwitchTheme },
@@ -101,6 +101,9 @@
         padding 0 10px
         &:hover
           border-bottom 2px solid #000
+      .screenfull
+        width 100%
+        height 100%
       .avatar-container
         .avatar-wrapper
           .user-avatar
