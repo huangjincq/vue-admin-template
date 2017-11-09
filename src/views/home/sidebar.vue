@@ -1,9 +1,11 @@
 <template>
   <el-menu
+    :background-color="themeColor.backgroundColor"
+    :text-color="themeColor.textColor"
+    :active-text-color="themeColor.activeTextColor"
     :default-active="$route.path"
     class="sidebar" :class="{close:sidebar}"
-    router :collapse="sidebar"
-  >
+    router :collapse="sidebar">
     <template v-for="item in permissionRouters">
       <el-menu-item v-if="!item.hidden && item.noDropdown && item.children.length>0"
                     :index="item.path+'/'+item.children[0].path">
@@ -16,7 +18,8 @@
           <span slot="title">{{item.name}}</span>
         </template>
         <template v-for="child in item.children" v-if='!child.hidden'>
-          <sidebar-item class='nest-menu' v-if='child.children&&child.children.length>0' :routes='[child]'></sidebar-item>
+          <sidebar-item class='nest-menu' v-if='child.children&&child.children.length>0'
+                        :routes='[child]'></sidebar-item>
           <el-menu-item :index="item.path+'/'+child.path">
             <i v-if='child.icon' :class="`iconfont ${item.icon}`"></i>
             <span slot="title">{{child.name}}</span>
@@ -32,13 +35,63 @@
 
   export default {
     data () {
-      return {}
+      return {
+        themeMap: {
+          1: {
+            backgroundColor: '#495159',
+            textColor: '#eee',
+            activeTextColor: '#2d8cf0'
+          },
+          2: {
+            backgroundColor: '#495159',
+            textColor: '#eee',
+            activeTextColor: '#64d572'
+          },
+          3: {
+            backgroundColor: '#495159',
+            textColor: '#eee',
+            activeTextColor: '#dc9a35'
+          },
+          4: {
+            backgroundColor: '#495159',
+            textColor: '#eee',
+            activeTextColor: '#f10215'
+          },
+          5: {
+            backgroundColor: null,
+            textColor: null,
+            activeTextColor: null
+          },
+          6: {
+            backgroundColor: null,
+            textColor: null,
+            activeTextColor: null
+          },
+          7: {
+            backgroundColor: null,
+            textColor: null,
+            activeTextColor: null
+          },
+          8: {
+            backgroundColor: null,
+            textColor: null,
+            activeTextColor: null
+          }
+        }
+      }
     },
     computed: {
       ...mapGetters([
         'permissionRouters',
-        'sidebar'
-      ])
+        'sidebar',
+        'themeId'
+      ]),
+      themeColor () {
+        return this.themeMap[this.themeId]
+      }
+    },
+    created () {
+      console.log(this.themeId)
     },
     methods: {}
   }
@@ -53,8 +106,11 @@
     z-index 1
     width 200px
     transition width .25s ease-out
+    box-sizing content-box
     &.close
       width 64px
     .iconfont
       margin-right 8px
+      font-size 14px
+      color inherit
 </style>

@@ -22,6 +22,10 @@ export default {
     }
     state.sidebarStatus = !state.sidebarStatus
   },
+  // 设置主题
+  [types.SET_THEME_ID] (state, themeId) {
+    state.themeId = themeId
+  },
   [types.ADD_VISITED_VIEWS] (state, view) {
     if (state.visitedViews.some(v => v.path === view.path)) return
     state.visitedViews.push({ name: view.name, path: view.path })

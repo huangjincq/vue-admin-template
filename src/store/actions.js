@@ -47,6 +47,10 @@ export default {
   ToggleSideBar ({ commit }) {
     commit(types.SET_SIDEBARSTATUS)
   },
+  // 设置主题Id
+  SetTheme ({ commit }, themeId) {
+    commit(types.SET_THEME_ID, themeId)
+  },
   // 增加一个访问记录
   AddVisitedViews ({ commit }, view) {
     commit(types.ADD_VISITED_VIEWS, view)

@@ -17,12 +17,12 @@ const service = axios.create({
 service.interceptors.request.use(config => {
   const Authorization = getLocalStorage('Authorization')
   if (Authorization) {
-    config.headers.Authorization = Authorization  // 让每个请求携带token--['Authorization']为自定义key 请根据实际情况自行修改
+    config.headers.Authorization = Authorization  // 让每个请求携带token--['Authorization']
   }
   return config
 }, error => {
   // Do something with request error
-  console.log(error) // for debug
+  console.log(error)
   Promise.reject(error)
 })
 
@@ -33,10 +33,10 @@ service.interceptors.response.use(
       switch (response.data.code) {
         case 'H0000':
           break
-        case 'B1000':                                   // 返回 B1000 清除token信息并跳转到登录页面
+        case 'B1000':                                  // 返回 B1000 清除token信息并跳转到登录页面
           sessionStorage.setItem('session_key', null)  // 将token清空
           store.dispatch('LogOut').then(() => {
-            location.reload()// 为了重新实例化vue-router对象 避免bug
+            location.reload() // 刷新页面
           })
           break
         default:

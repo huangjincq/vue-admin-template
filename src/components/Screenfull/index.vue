@@ -1,9 +1,9 @@
 <template>
-  <div @click='click'>
-    <el-tooltip effect="dark" :content="isFullScreen ? '退出全屏' : '全屏'" placement="bottom">
-      <i :class="isFullScreen?'el-icon-upload':'el-icon-rank'"></i>
-    </el-tooltip>
-  </div>
+  <el-tooltip effect="dark" :content="isFullScreen ? '退出全屏' : '全屏'" placement="bottom">
+    <el-button class="screen-full-btn" type="text" @click='click'>
+      <i class="iconfont" :class="isFullScreen?'icon-btn_cancelFullscreen':'icon-quanping'"></i>
+    </el-button>
+  </el-tooltip>
 </template>
 
 <script>
@@ -32,6 +32,8 @@
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="stylus">
+  .screen-full-btn
+    padding 0 10px
+    height 100%
 </style>

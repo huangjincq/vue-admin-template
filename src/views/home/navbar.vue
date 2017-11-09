@@ -1,14 +1,15 @@
 <template>
   <div class='navbar'>
     <div class='navbar-left'>
-      <i class='iconfont icon-zhankai' :class='{left:!sidebar}' @click='toggleSideBar'></i>
+      <el-button class="sidebar-btn" @click='toggleSideBar'>
+        <i class='iconfont icon-p-menus' :class='{left:!sidebar}'></i>
+      </el-button>
       <levelbar></levelbar>
       <tabs-view></tabs-view>
     </div>
     <div class='navbar-right'>
-
       <div class='navbar-right-item'>
-        <screenfull class="screenfull"></screenfull>
+        <screenfull></screenfull>
       </div>
       <div class='navbar-right-item'>
         <switch-theme></switch-theme>
@@ -19,17 +20,19 @@
           <i class='on bottom b-white'></i>
         </div>
         <el-dropdown-menu class='user-dropdown' slot='dropdown'>
-          <router-link class='inlineBlock' to='/'>
-            <el-dropdown-item>
+
+          <el-dropdown-item>
+            <router-link class='inlineBlock' to='/'>
               首页
-            </el-dropdown-item>
-          </router-link>
-          <a target='_blank' href=''>
-            <el-dropdown-item>
+            </router-link>
+          </el-dropdown-item>
+
+          <el-dropdown-item>
+            <a target='_blank' href='https://github.com/huangjincq/vue-admin-template'>
               项目地址
-            </el-dropdown-item>
-          </a>
-          <el-dropdown-item divided ><span @click='logout' style='display:block;'>退出登录</span></el-dropdown-item>
+            </a>
+          </el-dropdown-item>
+          <el-dropdown-item divided><span @click='logout' style='display:block;'>退出登录</span></el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -78,38 +81,40 @@
     .navbar-left
       flex 1
       display flex
-      .icon-zhankai
-        display block
-        font-size 13px
-        position relative
-        top -2px
-        cursor pointer
-        margin-right 10px
-        transform-origin center center
-        &.left
-          transform rotate(180deg)
+      .sidebar-btn
+        border none
+        &:hover
+          background #fff
+        &:focus
+          background #fff
+          color inherit
+
+        .icon-p-menus
+          display inline-block
+          font-size 18px
+          transform-origin center center
+          transition transform .2s ease-out
+          transform rotate(-90deg)
+          &.left
+            transform rotate(0deg)
 
     .navbar-right
       display flex
-      margin-right 15px
+      margin-right 30px
       .navbar-right-item
         transition border .25s
         border-bottom 2px solid transparent
         height 50px
-        cursor: pointer
-        position relative
-        padding 0 10px
+        cursor pointer
         &:hover
           border-bottom 2px solid #000
-      .screenfull
-        width 100%
-        height 100%
       .avatar-container
         .avatar-wrapper
+          padding 0 10px
           .user-avatar
-            width: 40px
-            height 40px
-            margin-top 5px
+            width 36px
+            height 36px
+            margin-top 8px
             border-radius: 50%;
           .on
             position absolute

@@ -13,18 +13,12 @@ const _import = require('./_import_' + process.env.NODE_ENV)
  **/
 
 import Home from '@/views/home'
+import components from './components'
+import charts from './charts'
 
 Vue.use(Router)
 
 export const constantRouterMap = [
-  {
-    path: '/',
-    redirect: '/home',
-    component: Home,
-    hidden: true,
-    name: '主页',
-    children: [{ path: 'home', component: _import('dashboard/index') }]
-  },
   {
     path: '/login',
     component: _import('login/login'),
@@ -32,25 +26,36 @@ export const constantRouterMap = [
     hidden: true
   },
   {
-    path: '/module1',
+    path: '/',
+    redirect: '/home',
     component: Home,
-    redirect: '/module1/index',
-    name: '模块1',
-    icon: 'icon-yingxionglianmeng',
-    children: [
-      { path: 'index', name: '模块1-1', component: _import('module1') }
-    ]
+    name: '首页',
+    hidden: true,
+    children: [{ path: 'home', component: _import('welcome/index'), name: '欢迎登录！' }]
   },
   {
-    path: '/module2',
+    path: '/introduction',
+    redirect: '/introduction/welcome',
     component: Home,
-    redirect: '/module1/page1',
-    name: '模块2',
-    icon: 'icon-yingxionglianmeng',
-    children: [
-      { path: 'page1', name: '模块2-1', component: _import('module2/page1') },
-      { path: 'page2', name: '模块2-2', component: _import('module2/page2') }
-    ]
+    noDropdown: true,
+    icon: 'icon-zhuyetc',
+    children: [{ path: 'index', name: '简介', component: _import('introduction/index') }]
+  },
+  {
+    path: '/components',
+    component: Home,
+    redirect: '/components/index',
+    name: '组件',
+    icon: 'icon-zujian',
+    children: [...components]
+  },
+  {
+    path: '/charts',
+    component: Home,
+    redirect: '/charts/page1',
+    name: '图表',
+    icon: 'icon-chart',
+    children: [...charts]
   },
   {
     path: '/error',

@@ -6,8 +6,7 @@
         <navbar></navbar>
       </el-header>
       <el-main>
-        <home-main>
-        </home-main>
+        <home-main></home-main>
       </el-main>
     </el-container>
   </div>
@@ -50,5 +49,10 @@
       &.close
         padding-left 64px
     .el-header
-      padding 0 10px
+      padding 0
+      background-color #fff
+      box-shadow 0 2px 1px 1px hsla(0,0%,39%,.1)
+    .el-main
+      padding 10px
+      background-color #f0f0f0
 </style>
