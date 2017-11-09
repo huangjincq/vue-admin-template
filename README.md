@@ -60,7 +60,7 @@
 ```
 
 ## 示例截图
-![image](https://github.com/huangjincq/vue-admin-template/master/images/login-page.png)
-![image](https://github.com/huangjincq/vue-admin-template/master/images/home-page.png)
+![image](https://github.com/huangjincq/vue-admin-template/raw/master/images/login-page.png)
+![image](https://github.com/huangjincq/vue-admin-template/raw/master/images/home-page.png)
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
