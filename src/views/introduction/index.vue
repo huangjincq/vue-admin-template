@@ -14,7 +14,7 @@
       </li>
       <li>
         <a target="_blank" href="http://www.jianshu.com/p/aca48c74b48d">
-          从0用Vue2.5和Elemnt-ui2搭建一个后台模版（1.登录、权限）
+          从0用Vue2.5和Elemnt-ui2搭建一个后台模版（2.登录、权限）
         </a>
       </li>
     </ul>
