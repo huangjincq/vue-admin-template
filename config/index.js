@@ -9,7 +9,7 @@ module.exports = {
   build: {
     prodEnv: require('./prod.env'),
     sitEnv: require('./sit.env'),
-    index: path.resolve(__dirname, '../dist/welcome.html'),
+    index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
