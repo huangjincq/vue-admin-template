@@ -2,7 +2,21 @@
 
 > vue-admin-template
 
-## [在线访问地址]()
+## [在线访问地址](https://huangjincq.github.io/vue-admin-template/)
+由于本项目挂载github上，https协议不支持数据请求，登录无法成功，建议下载到本地后运行查看
+
+## 概述
+[github地址](https://github.com/huangjincq/vue-admin-template)
+[个人博客地址](https://huangjincq.github.io/)
+此模板内涵盖：
+1. 登录权限控制
+2. 路由跳转拦截
+3. 网络请求拦截
+4. 侧边导航动态生成
+5. 动态换肤
+6. 结合Element-ui 2.0版本以上
+
+等等包含后台系统常用功能，方便快速开发，极易扩展的一个模版，基于此模版，您只需要修改少量的代码，就能进行开发。
 
 ## 文档地址
 [从0用Vue2.5和Elemnt-ui2搭建一个后台模版（1.搭建框架）](http://www.jianshu.com/p/cbec52341bd9)
