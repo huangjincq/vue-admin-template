@@ -12,4 +12,6 @@
 
 <style lang="stylus">
   @import "./styles/index.styl"
+  #app
+    height 100%
 </style>

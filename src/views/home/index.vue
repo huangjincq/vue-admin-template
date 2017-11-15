@@ -37,11 +37,7 @@
 
 <style lang="stylus" scoped>
   .container
-    position fixed
-    left 0
-    right 0
-    bottom 0
-    top 0
+    height 100%
     .container-right
       padding-left 200px
       height 100%
