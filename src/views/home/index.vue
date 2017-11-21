@@ -42,6 +42,7 @@
     right 0
     bottom 0
     top 0
+    overflow hidden
     .container-right
       padding-left 200px
       height 100%

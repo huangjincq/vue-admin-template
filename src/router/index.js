@@ -9,7 +9,7 @@ const _import = require('./_import_' + process.env.NODE_ENV)
  * hidden : if `hidden:true` will not show in the sidebar
  * redirect : if `redirect:noredirect` will no redirct in the levelbar
  * noDropdown : if `noDropdown:true` will has no submenu
- * meta : { role: ['admin'] }  will control the page role
+ * meta : {  }  will control the page message
  **/
 
 import Home from '@/views/home'
