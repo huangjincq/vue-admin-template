@@ -93,7 +93,7 @@
           display inline-block
           font-size 18px
           transform-origin center center
-          transition transform .2s ease-out
+          transition transform .25s ease-out
           transform rotate(-90deg)
           &.left
             transform rotate(0deg)
