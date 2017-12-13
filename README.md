@@ -2,7 +2,7 @@
 
 > vue-admin-template
 
-## [在线访问地址](https://huangjincq.github.io/vue-admin-template/)
+## [在线访问地址](https://huangjincq.github.io/vue-admin-template/dist/)
 由于本项目挂载github上，https协议不支持数据请求，登录无法成功，建议下载到本地后运行查看
 
 ## 概述
