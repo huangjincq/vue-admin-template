@@ -24,12 +24,8 @@
         </span>
       </el-form-item>
 
-      <el-button type="primary" style="width:100%;" :loading="loading" @click="handleLogin">登录
-      </el-button>
-
-      <div class='tips'>账号:admin 密码随便填</div>
-      <div class='tips'>账号:editor  密码随便填</div>
-
+      <el-button type="primary" style="width:100%;" :loading="loading" @click="handleLogin">登录</el-button>
+      <div class='tips'>账号密码随便填</div>
     </el-form>
   </div>
 </template>
@@ -110,8 +106,8 @@
     }
     .tips {
       font-size: 14px;
-      color: #000;
-      margin-bottom: 10px;
+      color: #666;
+      margin-top: 10px;
     }
     .icon-container {
       padding: 6px 5px 6px 15px;
