@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'SidebarItem',
+  name: 'VSidebarItem',
   props: {
     routes: {
       type: Array

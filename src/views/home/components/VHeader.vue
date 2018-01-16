@@ -4,8 +4,8 @@
       <el-button class="sidebar-btn" @click='toggleSideBar'>
         <i class='iconfont icon-p-menus' :class='{left:!sidebar}'></i>
       </el-button>
-      <levelbar></levelbar>
-      <tabs-view></tabs-view>
+      <v-header-levelbar></v-header-levelbar>
+      <v-header-tabs-view></v-header-tabs-view>
     </div>
     <div class='navbar-right'>
       <div class='navbar-right-item'>
@@ -43,11 +43,11 @@
   import { mapGetters } from 'vuex'
   import Screenfull from '@/components/Screenfull'
   import SwitchTheme from '@/components/SwitchTheme'
-  import tabsView from './tabsView'
-  import levelbar from './levelbar'
+  import VHeaderTabsView from './VHeaderTabsView'
+  import VHeaderLevelbar from './VHeaderLevelbar'
 
   export default {
-    components: { levelbar, Screenfull, tabsView, SwitchTheme },
+    components: { VHeaderLevelbar, Screenfull, VHeaderTabsView, SwitchTheme },
     data () {
       return {}
     },

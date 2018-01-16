@@ -6,16 +6,16 @@
     :default-active="$route.path"
     class="sidebar" :class="{close:sidebar}"
     router :collapse="sidebar">
-    <sidebar-item :routes="permissionRouters"></sidebar-item>
+    <v-sidebar-item :routes="permissionRouters"></v-sidebar-item>
   </el-menu>
 </template>
 
 <script>
   import { mapGetters } from 'vuex'
-  import SidebarItem from './SidebarItem'
+  import VSidebarItem from './VSidebarItem'
 
   export default {
-    components: { SidebarItem },
+    components: { VSidebarItem },
     data () {
       return {
         themeMap: {

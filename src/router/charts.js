@@ -7,8 +7,7 @@ export default [
   {
     path: 'page1',
     name: '图表-1',
-    component: _import('charts/page1'),
-    children: [{ path: 'index', name: '简介', component: _import('introduction/index') }]
+    component: _import('charts/page1')
   },
   {
     path: 'page2',

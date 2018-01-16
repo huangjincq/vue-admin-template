@@ -1,26 +1,26 @@
 <template>
   <div id="main" class="container">
-    <sidebar></sidebar>
+    <v-sidebar></v-sidebar>
     <el-container class="container-right" :class="{close:sidebar}">
       <el-header height="50px">
-        <navbar></navbar>
+        <v-header></v-header>
       </el-header>
       <el-main>
-        <home-main></home-main>
+        <v-main></v-main>
       </el-main>
     </el-container>
   </div>
 </template>
 
 <script>
-  import sidebar from './sidebar'
-  import homeMain from './homeMain'
-  import navbar from './navbar'
+  import VSidebar from './components/VSidebar'
+  import VMain from './components/VMain'
+  import VHeader from './components/VHeader'
   import { mapGetters } from 'vuex'
 
   export default {
     name: 'home',
-    components: { sidebar, homeMain, navbar },
+    components: { VSidebar, VMain, VHeader },
     data () {
       return {}
     },
