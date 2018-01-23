@@ -48,32 +48,34 @@
         this.formData = [
           {
             type: 'input',
-            val: ''
+            label: '设备查询',
+            val: '',
+            key: 'key1'
           },
           {
             type: 'radio',
             val: '',
+            key: 'key2',
             options: [
               { label: '单选一', value: 1 },
-              { label: '单选二', value: 2 },
-              { label: '单选三', value: 3 }
+              { label: '单选二', value: 2 }
             ]
           },
           {
             type: 'checkbox',
             val: [],
+            key: 'key3',
             options: [
               { label: '复选一', value: 1 },
-              { label: '复选二', value: 2 },
-              { label: '复选三', value: 3 }
+              { label: '复选二', value: 2 }
             ]
           }, {
             type: 'select',
             val: '',
+            key: 'key4',
             options: [
               { label: '下拉选项一', value: 1 },
-              { label: '下拉选项二', value: 2 },
-              { label: '下拉选项三', value: 3 }
+              { label: '下拉选项二', value: 2 }
             ]
           }]
         this.$message('赋值了')

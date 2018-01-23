@@ -48,15 +48,9 @@ service.interceptors.response.use(
     }
   },
   error => {
-    if (error.response) {
-      switch (error.response.status) {
-        case 401:
-      }
-    }
-    Message.error(ENV === 'development' ? '服务器端产生错误！' : '网络因素，请稍后重试！')
+    Message.error(ENV === 'development' ? error.message : '请求错误！')
     return Promise.reject(error.response.data)   // 返回接口返回的错误信息
   })
 
 export { BASE_API }
 export default service
-
