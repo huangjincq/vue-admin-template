@@ -1,7 +1,7 @@
 <template>
   <el-tooltip effect="dark" :content="isFullScreen ? '退出全屏' : '全屏'" placement="bottom">
     <el-button class="screen-full-btn" type="text" @click='click'>
-      <i class="iconfont" :class="isFullScreen?'icon-btn_cancelFullscreen':'icon-quanping'"></i>
+      <svg-icon :icon-class="isFullScreen?'btn_cancelFullscreen':'quanping'"></svg-icon>
     </el-button>
   </el-tooltip>
 </template>
@@ -36,4 +36,6 @@
   .screen-full-btn
     padding 0 10px
     height 100%
+    .svg-icon
+      font-size 16px
 </style>

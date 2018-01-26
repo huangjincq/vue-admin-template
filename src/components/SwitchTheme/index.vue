@@ -1,40 +1,40 @@
 <template>
   <el-dropdown trigger="click" @command="changeTheme" size="small">
     <el-button type="text" class="switch-theme-btn">
-      <i class="iconfont icon-yanse"></i><i class="el-icon-caret-bottom"></i>
+      <svg-icon icon-class="yanse"></svg-icon><i class="el-icon-caret-bottom"></i>
     </el-button>
     <el-dropdown-menu slot="dropdown" class="switch-theme">
       <el-dropdown-item :command="1">
-        <i class="iconfont icon-iconfont02 blue"></i>
-        <i v-show="themeId===1" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="iconfont02" class-name="blue"></svg-icon>
+        <svg-icon v-show="themeId===1" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
       <el-dropdown-item :command="2">
-        <i class="iconfont icon-iconfont02 green"></i>
-        <i v-show="themeId===2" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="iconfont02" class-name="green"></svg-icon>
+        <svg-icon v-show="themeId===2" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
       <el-dropdown-item :command="3">
-        <i class="iconfont icon-iconfont02 yellow"></i>
-        <i v-show="themeId===3" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="iconfont02" class-name="yellow"></svg-icon>
+        <svg-icon v-show="themeId===3" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
       <el-dropdown-item :command="4">
-        <i class="iconfont icon-iconfont02 red"></i>
-        <i v-show="themeId===4" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="iconfont02" class-name="red"></svg-icon>
+        <svg-icon v-show="themeId===4" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
       <el-dropdown-item :command="5" divided>
-        <i class="iconfont icon-staro blue"></i>
-        <i v-show="themeId===5" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="staro" class-name="blue"></svg-icon>
+        <svg-icon v-show="themeId===6" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
       <el-dropdown-item :command="6">
-        <i class="iconfont icon-staro green"></i>
-        <i v-show="themeId===6" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="staro" class-name="green"></svg-icon>
+        <svg-icon v-show="themeId===6" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
       <el-dropdown-item :command="7">
-        <i class="iconfont icon-staro yellow"></i>
-        <i v-show="themeId===7" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="staro" class-name="yellow"></svg-icon>
+        <svg-icon v-show="themeId===7" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
       <el-dropdown-item :command="8">
-        <i class="iconfont icon-staro red"></i>
-        <i v-show="themeId===8" class="iconfont icon-xuanzhong"></i>
+        <svg-icon icon-class="staro" class-name="red"></svg-icon>
+        <svg-icon v-show="themeId===8" icon-class="xuanzhong"></svg-icon>
       </el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
@@ -96,22 +96,18 @@
   .switch-theme-btn
     padding 0 10px
     height 50px
-  .switch-theme
-    .icon-xuanzhong
-      position relative
-      margin-left 5px
-      top 1px
-    .iconfont
-      font-size 18px
-    .blue
-      color #409EFF
-    .green
-      color #64D572
-    .yellow
-      color #DC9A35
-    .red
-      color #F10215
-
-  .icon-yanse
+  .icon-xuanzhong
+    margin-left 5px
+  .svg-icon
     font-size 18px
+    + .svg-icon
+      margin-left 5px
+  .blue
+    color #409EFF
+  .green
+    color #64D572
+  .yellow
+    color #DC9A35
+  .red
+    color #F10215
 </style>

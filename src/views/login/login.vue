@@ -6,20 +6,20 @@
 
       <el-form-item prop="username">
         <span class="icon-container">
-          <i class="iconfont icon-zhanghu"></i>
+          <svg-icon icon-class="zhanghu"></svg-icon>
         </span>
         <el-input name="username" v-model="loginForm.username" placeholder="请输入用户名"/>
       </el-form-item>
 
       <el-form-item prop="password">
         <span class="icon-container">
-          <i class="iconfont icon-mima"></i>
+          <svg-icon icon-class="mima"></svg-icon>
         </span>
         <el-input name="password" :type="pwdType" @keyup.enter.native="handleLogin" v-model="loginForm.password"
                   placeholder="请输入密码"/>
         <span class='show-pwd' @click='showPwd'>
           <el-tooltip :content="pwdType==='password'?'密码可见':'密码不可见'" placement="right">
-            <i class="iconfont" :class="pwdType==='password'?'icon-zhengyan':'icon-biyan'"></i>
+            <svg-icon :icon-class="pwdType==='password'?'zhengyan':'biyan'"></svg-icon>
           </el-tooltip>
         </span>
       </el-form-item>

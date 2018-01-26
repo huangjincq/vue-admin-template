@@ -1,6 +1,9 @@
 <template>
   <el-card>
-    <h2>简介、文档</h2>
+    <h2>
+      简介、文档
+      <svg-icon icon-class="-zhibi" style="font-size: 80px"></svg-icon>
+    </h2>
     <ul class="list">
       <li>
         项目地址:<a target="_blank" href="https://github.com/huangjincq/vue-admin-template">
@@ -55,6 +58,7 @@
 </template>
 
 <script>
+
   export default {
     data () {
       return {

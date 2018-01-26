@@ -38,7 +38,7 @@ export const constantRouterMap = [
     redirect: '/introduction/welcome',
     component: Home,
     noDropdown: true,
-    icon: 'icon-zhuyetc',
+    icon: 'zhuyetc',
     children: [{ path: 'index', name: '简介', component: _import('introduction/index') }]
   },
   {
@@ -46,7 +46,7 @@ export const constantRouterMap = [
     component: Home,
     redirect: '/components/index',
     name: '组件',
-    icon: 'icon-zujian',
+    icon: 'zujian',
     children: [...components]
   },
   {
@@ -54,7 +54,7 @@ export const constantRouterMap = [
     component: Home,
     redirect: '/charts/page1',
     name: '图表',
-    icon: 'icon-chart',
+    icon: 'chart',
     children: [...charts]
   },
   {
@@ -62,7 +62,7 @@ export const constantRouterMap = [
     component: Home,
     redirect: 'noredirect',
     name: '错误页面',
-    icon: 'icon-shoucang',
+    icon: 'shoucang',
     children: [
       { path: '/404', name: '404', component: _import('errorPage/404') }
     ]
